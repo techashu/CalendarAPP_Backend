@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 def create_app(config_filename):
     app = Flask(__name__)
@@ -15,4 +16,5 @@ def create_app(config_filename):
 
 if __name__ == "__main__":
     app = create_app("config")
+    CORS(app)
     app.run(debug=True)
